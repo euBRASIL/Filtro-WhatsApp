@@ -1,0 +1,47 @@
+const ca = To(kt),
+    zt = "watidy",
+    Tt = "7.2",
+    qt = "ffce211a-7b07-4d91-ba5d-c40bb4034a83",
+    Pt = "https://painel.wascript.com.br/",
+    Nt = {
+        "multi-atendimento": "https://multi-atendimento.wascript.com.br",
+        "api-whatsapp": "https://api-whatsapp.wascript.com.br"
+    },
+    It = "https://waclientes.sigeapp.com.br/login.php",
+    Ht = "https://audio-transcriber.wascript.com.br/transcription",
+    Lt = "https://domselector.watidy.com/index.php",
+    jt = "https://app.watools.com.br/api/public/waTidy-logs",
+    Ot = 50,
+    Ut = {
+        name: zt,
+        version: Tt,
+        cript_key: qt,
+        backend: Pt,
+        webSocket: Nt,
+        painel_Gestor: It,
+        audio_transcriber: Ht,
+        domSelector: Lt,
+        logs_erros: jt,
+        midiaLimit: Ot
+    },
+    no = Ut.cript_key,
+    s0 = {
+        encryptData: e => ca.AES.encrypt(JSON.stringify(e), no).toString(),
+        decryptData: e => {
+            const i = ca.AES.decrypt(e, no).toString(ca.enc.Utf8);
+            return JSON.parse(i)
+        }
+    },
+    io = ["11", "12", "13", "14", "15", "16", "17", "18", "19", "21", "22", "24", "27", "28"],
+    c0 = {
+        whatsapp: e => {
+            e = e.replace(/[^\d]/g, ""), (e.length === 10 || e.length === 11) && (e = "55" + e);
+            const o = e.substring(2, 4);
+            return io.includes(o) ? e.length === 12 && (e = e.replace(/(\d{4})(\d{4})/, "$19$2")) : e.length === 13 && (e[2] == e[4] ? e = e.slice(0, 4) + e.slice(5) : e = e.replace("9", "")), e
+        },
+        add55: e => (e[0] === "0" && (e = e.substring(1)), e.length === 10 || e.length === 11 ? "55" + e : e),
+        add9: e => {
+            const i = e.substring(2, 4);
+            return io.includes(i) ? e.length === 12 && (e = e.replace(/(\d{4})(\d{4})/, "$19$2")) : e.length === 13 && (e[2] == e[4] ? e = e.slice(0, 4) + e.slice(5) : e = e.replace("9", "")), e
+        }
+    };

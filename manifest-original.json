@@ -1,0 +1,28 @@
+{
+   "action": {
+      "default_icon": "label/icons/icon.png"
+   },
+   "background": {
+      "service_worker": "background.iife.js"
+   },
+   "content_scripts": [ {
+      "css": [ "label/css/whapro.css", "content/assets/css/style.css", "content.css" ],
+      "js": [ "content/index.js", "micRecorder.js" ],
+      "matches": [ "https://web.whatsapp.com/*" ]
+   } ],
+   "description": "Whapro é um CRM para WhatsApp Web. Organize seus chats e otimize seus negócios no WhatsApp Web",
+   "differential_fingerprint": "1.08acd849c27cca4d65a1fc8e34413f381a491ecb7723be8c10ac09e8d1d29af3",
+   "icons": {
+      "128": "label/icons/icon.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0X8t2qZOcNOXxAYLjNT0a3qxTXIB+OqcCRISwkbD6kRp74zzEp1jsu7K1K8jDSGavc1dJWicIayISTeTDB4U6SPAUKw2B8HGRr/NJxAFrng+qDDzymlqbOOxHcOseqzMQ0OQSpWqJj774HoC80rIQnn2bNIwkuMmD46EA5Qx7dNakXAfnxyrdogwb32LcABqDnapAQQeo7Bs0YVoF9TTHphHnwvW0kZ7YDdu479H8oTtsOIUnHBuzG7ZEZ4ULhiSt2LNwHQJJXLiCX004p0LJoklU9nzhVKIGeEV+hE1ilY3CkY+a1ApTEmP0tNxx1bIYiUrVHqLtCxrSTfWftzlpQIDAQAB",
+   "manifest_version": 3,
+   "name": "Seu WhatsApp: Disparos, Funil, Agenda, CRM, IA, Autoatendimento e Bot!",
+   "permissions": [ "unlimitedStorage", "storage", "alarms", "tabs" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "7.2",
+   "web_accessible_resources": [ {
+      "matches": [ "https://web.whatsapp.com/*" ],
+      "resources": [ "*.js", "*.css", "*.png", "*.mp3", ".ttf", "label/*.json", "label/*.png" ]
+   } ]
+}

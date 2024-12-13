@@ -1,0 +1,25 @@
+{
+   "action": {
+      "default_icon": "label/icons/icon.png"
+   },
+   "background": {
+      "service_worker": "background.iife.js"
+   },
+   "content_scripts": [ {
+      "css": [ "label/css/whapro.css", "content/assets/css/style.css", "content.css" ],
+      "js": [ "content/index.js", "micRecorder.js" ],
+      "matches": [ "https://web.whatsapp.com/*" ]
+   } ],
+   "description": "euBRASIL desenvolveu uma personalização da interface web de WhatsApp",
+   "icons": {
+      "128": "label/icons/icon.png"
+   },
+   "manifest_version": 3,
+   "name": "euBRASIL | WhatsApp",
+   "permissions": [ "unlimitedStorage", "storage", "alarms", "tabs" ],
+   "version": "7.9",
+   "web_accessible_resources": [ {
+      "matches": [ "https://web.whatsapp.com/*" ],
+      "resources": [ "*.js", "*.css", "*.png", "*.mp3", ".ttf", "label/*.json", "label/*.png" ]
+   } ]
+}
